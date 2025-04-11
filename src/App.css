@@ -1,38 +1,174 @@
-.App {
+/* Global styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #1c1f2e, #141622);
+  color: #e2e8f0;
+  min-height: 100vh;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 30px 20px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.02);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 25px;
+  color: #38f2d2;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Form styles */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 20px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+form input,
+form select {
+  flex: 1 1 200px;
+  padding: 10px 14px;
+  background: #1e2233;
+  border: 1px solid #2c2f44;
+  border-radius: 8px;
+  color: #f0f0f0;
+  transition: border 0.3s ease, background 0.3s ease;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+form input:focus,
+form select:focus {
+  border-color: #38f2d2;
+  outline: none;
+  background: #282c40;
+}
+
+form button {
+  background: #38f2d2;
+  color: #10111a;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+form button:hover {
+  background: #2ee9c5;
+  transform: scale(1.03);
+}
+
+/* Job card styles */
+.job-list {
+  margin-top: 30px;
+  display: grid;
+  gap: 18px;
+}
+
+.job-card {
+  padding: 20px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 10px;
+}
+
+.job-card:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.job-card h3 {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.job-card p,
+.job-card a {
+  color: #b5bacf;
+  font-size: 14px;
+}
+
+.job-card select {
+  background: #1e2233;
+  border: 1px solid #2c2f44;
+  padding: 6px 10px;
+  border-radius: 6px;
+  color: #f0f0f0;
+}
+
+.job-card button {
+  align-self: flex-start;
+  background: #ff4c4c;
   color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.job-card button:hover {
+  background: #ff2f2f;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Filter dropdown */
+select {
+  background: #1e2233;
+  border: 1px solid #2c2f44;
+  color: #e2e8f0;
+  border-radius: 6px;
+  padding: 8px;
+  transition: all 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px 15px;
   }
-  to {
-    transform: rotate(360deg);
+
+  form {
+    flex-direction: column;
+  }
+
+  form input,
+  form select,
+  form button {
+    width: 100%;
+  }
+
+  .job-card {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 24px;
   }
 }
