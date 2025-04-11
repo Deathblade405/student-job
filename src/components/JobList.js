@@ -8,9 +8,9 @@ const JobList = () => {
   const [filter, setFilter] = useState('');
 
   const fetchJobs = async () => {
-    const res = await axios.get(`${process.env.REACT_APP_API_URL}/jobs`);
+    const res = await axios.get(`${process.env.REACT_APP_API_URL}jobs`);
     setJobs(res.data);
-    console.log("Submitting to:", `${process.env.REACT_APP_API_URL}/jobs`);
+    console.log("Submitting to:", `${process.env.REACT_APP_API_URL}jobs`);
 
   };
 
